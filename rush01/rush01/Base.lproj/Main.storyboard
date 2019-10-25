@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="14490.70" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="BYZ-38-t0r">
+    <device id="retina6_1" orientation="portrait">
+        <adaptation id="fullscreen"/>
+    </device>
+    <dependencies>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="14490.49"/>
+        <capability name="Safe area layout guides" minToolsVersion="9.0"/>
+        <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
+    </dependencies>
+    <scenes>
+        <!--View Controller-->
+        <scene sceneID="tne-QT-ifu">
+            <objects>
+                <viewController id="BYZ-38-t0r" customClass="ViewController" customModule="rush01" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <mapView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" mapType="standard" translatesAutoresizingMaskIntoConstraints="NO" id="t1O-iQ-CH5">
+                                <rect key="frame" x="0.0" y="5" width="414" height="896"/>
+                            </mapView>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="W8e-ns-56q">
+                                <rect key="frame" x="146.5" y="784" width="121" height="29"/>
+                                <segments>
+                                    <segment title="First"/>
+                                    <segment title="Second"/>
+                                </segments>
+                                <connections>
+                                    <action selector="segmentSelected:" destination="BYZ-38-t0r" eventType="valueChanged" id="Lg3-ho-N7c"/>
+                                </connections>
+                            </segmentedControl>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0lS-1f-KRH">
+                                <rect key="frame" x="364" y="787" width="25" height="25"/>
+                                <state key="normal" image="gps"/>
+                                <connections>
+                                    <action selector="locateMeButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="qh6-xh-TZN"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="t1O-iQ-CH5" firstAttribute="centerY" secondItem="6Tk-OE-BBY" secondAttribute="centerY" id="7QU-fC-j4g"/>
+                            <constraint firstItem="W8e-ns-56q" firstAttribute="centerX" secondItem="t1O-iQ-CH5" secondAttribute="centerX" id="ACx-J9-lJo"/>
+                            <constraint firstItem="t1O-iQ-CH5" firstAttribute="width" secondItem="8bC-Xf-vdC" secondAttribute="width" id="UwC-42-Thu"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="0lS-1f-KRH" secondAttribute="trailing" constant="25" id="adR-aU-5sV"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="0lS-1f-KRH" secondAttribute="bottom" constant="50" id="ean-bS-gua"/>
+                            <constraint firstItem="t1O-iQ-CH5" firstAttribute="centerX" secondItem="6Tk-OE-BBY" secondAttribute="centerX" id="qW0-Ww-6kn"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="W8e-ns-56q" secondAttribute="bottom" constant="50" id="vRc-uK-OLU"/>
+                            <constraint firstItem="t1O-iQ-CH5" firstAttribute="height" secondItem="8bC-Xf-vdC" secondAttribute="height" id="xOh-Dd-DJV"/>
+                        </constraints>
+                        <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
+                    </view>
+                    <connections>
+                        <outlet property="mapView" destination="t1O-iQ-CH5" id="Trc-Wc-RZg"/>
+                        <outlet property="segmentedControlBar" destination="W8e-ns-56q" id="6QK-pf-sUN"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
+            </objects>
+        </scene>
+    </scenes>
+    <resources>
+        <image name="gps" width="25" height="25"/>
+    </resources>
+</document>
